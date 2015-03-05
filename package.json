@@ -1,0 +1,18 @@
+{
+  "name": "xubliminal-new-clients",
+  "version": "1.0.0",
+  "description": "Xubliminal - Campaña Clientes Potenciales",
+  "repository": {
+    "type": "git",
+    "url": "https://mauricio-gamboa@github.com/mauricio-gamboa/xubliminal-new-clients.git"
+  },
+  "homepage": "https://github.com/mauricio-gamboa/xubliminal-new-clients",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-less": "~0.11.4",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
