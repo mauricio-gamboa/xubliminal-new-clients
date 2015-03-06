@@ -35,11 +35,11 @@
                   <div class="form-container">
                     <form name="clientsForm" ng-submit="submit(clientsForm.$valid)" class="form" role="form" novalidate>
                       <fieldset>
-                        <label for="name">Persona Encargada</label>
+                        <label for="name">Persona Encargada <span>Campo requerido</span></label>
                         <input id="name" type="text" ng-model="formData.name" name="name" required>
                       </fieldset>
                       <fieldset>
-                        <label for="email">Correo Electrónico</label>
+                        <label for="email">Correo Electrónico <span>Campo requerido</span></label>
                         <input id="email" type="email" ng-model="formData.email" name="email" required>
                       </fieldset>
                       <fieldset>

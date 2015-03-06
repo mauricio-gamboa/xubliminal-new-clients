@@ -17,6 +17,7 @@ Variables
 @gray-4: #f7f8fc;
 
 @blue-1: rgba(222, 229, 235, 0.2);
+@blue-2: #8eddf4;
 
 @green-1: #69be61;
 
@@ -122,7 +123,6 @@ input[type="email"],
 textarea {
   background-color: white;
   border: 1px solid @gray-3;
-  box-shadow: 0 0 10px 0 @gray-3 inset;
   border-radius: 5px;
   height: 41px;
   padding: 0 10px;
@@ -130,9 +130,14 @@ textarea {
   resize: none;
 
   &:focus {
-    border-color: @yellow-1;
-    box-shadow: 0 0 5px -1px @yellow-1;
+    border-color: @blue-2;
+    box-shadow: 0 0 5px -1px @blue-2;
   }
+}
+
+input[type="text"],
+input[type="email"] {
+  background: url("../images/g-1.png") repeat-x 0 0 white;
 }
 
 label {
@@ -269,6 +274,14 @@ Form Styles
           margin: 0;
           height: 33px;
           line-height: 35px;
+
+          span {
+            color: @gray-1;
+            font-size: 9px;
+            float: right;
+            height: 33px;
+            line-height: 35px;
+          }
         }
       }
     }
