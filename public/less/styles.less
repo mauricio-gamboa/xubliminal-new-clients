@@ -7,12 +7,18 @@ Variables
 @yellow-1: #ffd300;
 @yellow-2: #fcdf54;
 
+@red-1: red;
+
+@black-1: rgba(0, 0, 0, 0.6);
+
 @gray-1: #898e9b;
 @gray-2: #363636;
 @gray-3: #d9d9d9;
 @gray-4: #f7f8fc;
 
 @blue-1: rgba(222, 229, 235, 0.2);
+
+@green-1: #69be61;
 
 @large: ~"(min-width: 1200px)";
 @medium: ~"(min-width: 993px) and (max-width: 1200px)";
@@ -91,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'open_sanslight';
 }
 
-a, input {
+a, input, button {
   color: black;
   
   &:focus {
@@ -184,6 +190,11 @@ Title Styles
     span {
       font-family: 'open_sanssemibold';
       color: @yellow-1;
+
+      &.success {
+        font-family: 'open_sanslight';
+        color: @green-1;
+      }
     }
   }
 
@@ -229,6 +240,7 @@ Form Styles
   }
 
   > div {
+    position: relative;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
@@ -260,5 +272,58 @@ Form Styles
         }
       }
     }
+  }
+
+  & + .logo-wrapper {
+    margin-bottom: 26px;
+  }
+}
+
+.form {
+  &.ng-submitted {
+    input,
+    textarea {
+      &.ng-invalid {
+        border-color: @red-1;
+        box-shadow: 0 0 5px -1px @red-1;
+      }
+    }
+  }
+}
+
+.spinner {
+  background-color: @black-1;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  color: @yellow-1;
+  text-align: center;
+  font-size: 40px;
+
+  i {
+    position: relative;
+    top: 45%;
+  }
+}
+
+.submit-success {
+  padding: 18px 40px 30px;
+  text-align: center;
+
+  @media @xs {
+    padding: 18px 30px 30px;
+  }
+
+  h3 {
+    font-family: 'open_sanssemibold';
+    font-size: 17px;
+    color: @gray-2;
+    margin: 20px 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 23px;
   }
 }
