@@ -8,57 +8,72 @@
   <link rel="stylesheet" href="public/styles/styles.css">
 </head>
 <body>
-  <section id="title">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h1>Active su crédito de <span>$500</span></h1>
-          <p>Por favor llene el formulario para validar su crédito</p>
+  <div ng-controller="NewClientsController">
+    <section id="title">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1 ng-hide="showSuccess">Active su crédito de <span>$500</span></h1>
+            <h1 ng-show="showSuccess">Su crédito ha sido <span class="success">activado</span></h1>
+            <p ng-hide="showSuccess">Por favor llene el formulario para validar su crédito</p>
+            <p ng-show="showSuccess">Gracias por la oportunidad de ser parte de su equipo</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section id="form">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div id="form-wrapper">
-            <div>
-              <div class="form-header">
-                <img src="public/images/client-logo.png" alt="">
-              </div>
-              <div class="form-container">
-                <form action="">
-                  <fieldset>
-                    <label for="name">Persona Encargada</label>
-                    <input id="name" type="text" name="name">
-                  </fieldset>
-                  <fieldset>
-                    <label for="email">Correo Electrónico</label>
-                    <input id="email" type="email" name="email">
-                  </fieldset>
-                  <fieldset>
-                    <label for="phone">Teléfono</label>
-                    <input id="phone" type="text" name="phone">
-                  </fieldset>
-                  <fieldset>
-                    <label for="department">Departamento</label>
-                    <input id="department" type="text" name="department">
-                  </fieldset>
-                  <fieldset>
-                    <button type="submit" class="my-btn btn-1">Activar Crédito <i class="fa fa-chevron-right"></i></button>
-                  </fieldset>
-                </form>
+    </section>
+    <section id="form">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div id="form-wrapper">
+              <div>
+                <div class="spinner" ng-show="showSpinner"><i class="fa fa-spinner fa-pulse"></i></div>
+                <div ng-hide="showSuccess">
+                  <div class="form-header">
+                    <img src="public/images/client-logo.png" alt="">
+                  </div>
+                  <div class="form-container">
+                    <form name="clientsForm" ng-submit="submit(clientsForm.$valid)" class="form" role="form" novalidate>
+                      <fieldset>
+                        <label for="name">Persona Encargada</label>
+                        <input id="name" type="text" ng-model="formData.name" name="name" required>
+                      </fieldset>
+                      <fieldset>
+                        <label for="email">Correo Electrónico</label>
+                        <input id="email" type="email" ng-model="formData.email" name="email" required>
+                      </fieldset>
+                      <fieldset>
+                        <label for="phone">Teléfono</label>
+                        <input id="phone" type="text" ng-model="formData.phone" name="phone">
+                      </fieldset>
+                      <fieldset>
+                        <label for="department">Departamento</label>
+                        <input id="department" type="text" ng-model="formData.department" name="department">
+                      </fieldset>
+                      <fieldset>
+                        <button type="submit" class="my-btn btn-1">Activar Crédito <i class="fa fa-chevron-right"></i></button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+                <div class="submit-success" ng-show="showSuccess">
+                  <img src="public/images/kat.png">
+                  <h3>¡Estamos listos para comenzar!</h3>
+                  <p>Mi nombre es Katherine Sandoval y seré la encargada de darle seguimiento al canje de su crédito, le contactaré en las próximas horas para ver los requerimientos de su proyecto en detalle.</p>
+                  <div class="logo-wrapper">
+                    <a href="http://www.xubliminal.com/" class="logo" target="_blank"><img src="public/images/logo.png" alt=""></a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="logo-wrapper">
-            <a href="http://www.xubliminal.com/" class="logo" target="_blank"><img src="public/images/logo.jpg" alt=""></a>
+            <div class="logo-wrapper" ng-hide="showSuccess">
+              <a href="http://www.xubliminal.com/" class="logo" target="_blank"><img src="public/images/logo.png" alt=""></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
   <script src="public/js/min/libs.min.js"></script>
   <script src="public/js/min/app.min.js"></script>
 </body>
